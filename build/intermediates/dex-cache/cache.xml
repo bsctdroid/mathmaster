@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\Polarium\.android\build-cache\228d4798314061adfb40cbb872907ca3612abe99\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_9b37373a29affc608fe810fd026b9d5fc0eefce8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="07b801d82ba9035230b92b0250dabb23a4698f01">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_5760bfe6f84c0b90933a99aefc01579944eac6f9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3be78ebc2706b2e1fe2f12d5726887a92d6c183b">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_477843ec3eaea998de20c9c3511a7247262525d1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Polarium\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_f969e802f61be4b949cfd7f003ddd57a8ffa6243\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Polarium\.android\build-cache\248ef9e7a9881eb3e300b98b39cdb19f8278f6a3\output\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10\classes_0091e5cb5a2e91d7481e44a5a9dd0d6d291ee5a8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Polarium\.android\build-cache\228d4798314061adfb40cbb872907ca3612abe99\output\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="D:\Android\outwork_ojb\MathMaster_171009\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_b46fd248ce6b54dde35cecacf4b236541d64a681\classes.dex" />
+    </item>
+
+</items>

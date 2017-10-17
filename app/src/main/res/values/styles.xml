@@ -1,0 +1,58 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <!-- <style name="AppBaseTheme" parent="Theme.AppCompat.Light.DarkActionBar"> -->
+     <style name="AppBaseTheme" parent="Theme.AppCompat.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+        <!-- Customize your theme here. -->
+        <!-- <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item> -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+    <style name="Theme.Dialog" parent="android:Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- color palette s-->
+    <!-- 참고 : http://davidlab.net/google-design-ko/style/color.html#color-color-palette -->
+    <!-- values/color.xml로 옮김 삭제 요망 -->
+    <style name="ColorLightBlue100">
+        <item name="android:background">#83E5FC</item>
+    </style>
+    <style name="ColorLightBlue200">
+        <item name="android:background">#81D4FA</item>
+    </style>
+    <style name="ColorLightBlue300">
+        <item name="android:background">#4FC3F7</item>
+    </style>
+    <style name="ColorLightBlue400">
+        <item name="android:background">#29B6F6</item>
+    </style>
+    <style name="ColorLightBlue500">
+        <item name="android:background">#29B6F6</item>
+    </style>
+
+    <style name="ColorCyan300">
+        <item name="android:background">#4DD0E1</item>
+    </style>
+    <style name="ColorTeal300">
+        <item name="android:background">#4DB6AC</item>
+    </style>
+    <style name="ColorGreen300">
+        <item name="android:background">#81c784</item>
+    </style>
+    <!-- color palette e-->
+</resources>

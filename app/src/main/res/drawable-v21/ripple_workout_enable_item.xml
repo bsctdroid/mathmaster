@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple
+    xmlns:android="http://schemas.android.com/apk/res/android" android:color="@color/colorDeepOrange50">
+    <item>
+        <selector>
+            <item android:state_pressed="true">
+                <shape>
+                    <solid android:color="@color/colorDeepOrange900" />
+                    <corners android:radius="1dp" />
+
+                </shape>
+            </item>
+            <item android:state_pressed="false">
+                <!--<color android:color="@color/colorLightBlue300"/>-->
+                <shape>
+                    <solid android:color="@color/colorDeepOrange200" />
+                    <corners android:radius="1dp" />
+                </shape>
+            </item>
+        </selector>
+    </item>
+</ripple>

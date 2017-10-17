@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+     
+    <color name="btn_bg_select">#9d9d9d</color>
+	<color name="btn_bg_normal">#cdcdcd</color>
+
+    <!-- color palette -->
+    <!-- 참고 : http://davidlab.net/google-design-ko/style/color.html#color-color-palette -->
+    <color name="colorBtnBgDefault">#4FC3F7</color>
+
+    <color name="colorLightBlue50">#E1F5FE</color>
+    <color name="colorLightBlue100">#B3E5FC</color>
+    <color name="colorLightBlue200">#81D4FA</color>
+    <color name="colorLightBlue300">#4FC3F7</color>
+    <color name="colorLightBlue400">#29B6F6</color>
+    <color name="colorLightBlue500">#03A9FA</color>
+    <color name="colorLightBlue600">#039BE5</color>
+    <color name="colorLightBlue700">#0288D1</color>
+    <color name="colorLightBlue800">#0277BD</color>
+    <color name="colorLightBlue900">#01579B</color>
+
+    <color name="colorDeepOrange50">#FBE9E7</color>
+    <color name="colorDeepOrange100">#FFCCBC</color>
+    <color name="colorDeepOrange200">#ffab91</color>
+    <color name="colorDeepOrange300">#FF8A65</color>
+    <color name="colorDeepOrange900">#BF360C</color>
+
+    <color name="colorCyan300">#4DD0E1</color>
+    <color name="colorTeal300">#4DB6AC</color>
+    <color name="colorGreen300">#81c784</color>
+
+
+</resources>
+ 

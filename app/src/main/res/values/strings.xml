@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MathMaster</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="alert_error_occurred_while_connection_to_server_try_later">The error occur during connecting server.\nTry again.</string>
+    <string name="alert_unable_to_connect_to_network_try_again">Unable to connecting network. Try again.</string>
+    <string name="alert_unable_to_connect_to_server_try_again">Unable to connecting server. Try again.</string>
+    <string name="alert_unable_to_register_device">Fail to registering a device. try again later</string>
+   	<string name="alert_unable_to_request_device_info">Fail to requesting registered information of a device. Try again.</string>
+    <string name="alert_unable_to_auto_login">Fail to auto login. Try again.</string>
+   	<string name="alert_unable_to_logout">Fail to logout. Try again.</string>
+   	<string name="alert_unable_to_loading_menu_list">Fail to loading list of menu. Try again.</string>
+    <string name="alert_unable_to_log_in">Unable to sign in. Please check your account information and try again.</string>
+    <string name="alert_install_guide">Download completed. Please install mPILOT2.0.</string>
+    <string name="alert_update_failed">Using wifi or please try again later.</string>
+    
+    <string name="workout_button_addtion">Addtion</string>
+    <string name="workout_button_subtraction">Subtraction</string>
+    <string name="workout_button_multiplication">Multiplication</string>
+    <string name="workout_button_division">Division</string>
+    <string name="workout_button_mix">Mix</string>
+
+    <string name="main_button_workout">Work Out</string>
+    <string name="main_button_result">Result</string>
+
+</resources>

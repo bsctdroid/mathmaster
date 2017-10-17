@@ -1,0 +1,7 @@
+#Mon Oct 16 17:10:51 KST 2017
+base.0=D\:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5760bfe6f84c0b90933a99aefc01579944eac6f9
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=D\:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_477843ec3eaea998de20c9c3511a7247262525d1\\classes.dex
+base.1=D\:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_477843ec3eaea998de20c9c3511a7247262525d1
+file.0=D\:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_5760bfe6f84c0b90933a99aefc01579944eac6f9\\classes.dex

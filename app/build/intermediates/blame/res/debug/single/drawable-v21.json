@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ripple_base.xml",
+        "source": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\src\\main\\res\\drawable-v21\\ripple_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ripple_button_base.xml",
+        "source": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\src\\main\\res\\drawable-v21\\ripple_button_base.xml"
+    },
+    {
+        "merged": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ripple_workout_enable_item.xml",
+        "source": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\src\\main\\res\\drawable-v21\\ripple_workout_enable_item.xml"
+    },
+    {
+        "merged": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ripple_workout_pass_item.xml",
+        "source": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\src\\main\\res\\drawable-v21\\ripple_workout_pass_item.xml"
+    },
+    {
+        "merged": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\ripple_workout_disable_item.xml",
+        "source": "D:\\Android\\outwork_ojb\\MathMaster_171009\\app\\src\\main\\res\\drawable-v21\\ripple_workout_disable_item.xml"
+    }
+]

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffff">
+    
+ 	<LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" 
+        >
+
+        <Button
+            android:id="@+id/button_addtion"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ripple_button_base"
+            android:textColor="#ffffff"
+            android:layout_marginBottom="10dp"
+            android:onClick="mOnClick"
+            android:text="@string/workout_button_addtion"
+            android:elevation="3dp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/button_subtraction"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple_button_base"
+            android:textColor="#ffffff"
+            android:onClick="mOnClick"
+            android:text="@string/workout_button_subtraction"
+            android:elevation="3dp"
+            android:layout_margin="10dp"/>
+            <!--android:elevation="2dp"
+            android:translationZ="2dp" -->
+        <Button
+            android:id="@+id/button_multiplication"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple_button_base"
+            android:textColor="#ffffff"
+            android:onClick="mOnClick"
+            android:text="@string/workout_button_multiplication"
+            android:elevation="3dp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/button_division"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ripple_button_base"
+            android:textColor="#ffffff"
+            android:onClick="mOnClick"
+            android:text="@string/workout_button_division"
+            android:elevation="3dp"
+            android:layout_margin="10dp"/>
+
+        <Button
+            android:id="@+id/button_mix"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:background="@drawable/ripple_button_base"
+            android:onClick="mOnClick"
+            android:textColor="#ffffff"
+            android:text="@string/workout_button_mix"
+            android:elevation="3dp"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+
+
+</LinearLayout>
