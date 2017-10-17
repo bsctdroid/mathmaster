@@ -26,7 +26,7 @@ public class MathMasterActivity extends BaseActivity {
         tvView = (TextView)findViewById(R.id.textView1);
         tvView.setText("level : " + level  + " type " + type);
         mathCcHelper.getInstance().setInitData(0, 1);
-
+		//dtest
 		SPManager.init(MathMasterActivity.this);
 		initData();
     }
