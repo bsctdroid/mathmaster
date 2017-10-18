@@ -2,6 +2,7 @@ package bong.anroid.mathmaster.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +65,23 @@ public class WorkoutLevelActivity extends BaseActivity {
 		public void onClick(View v) {
 			//String path = TextView.class.cast(v.findViewById(R.id.textViewBtnHidden)).getText().toString();
 			//	Log.d(TAG, "touch " + path);
+
+			String strIndex = (String)(v.findViewById(R.id.textView)).getTag();
+			int nIndex = 0;
+			try{
+				nIndex = Integer.parseInt(strIndex);
+			}catch (Exception e) {
+				nIndex = -1;
+			}
+
+			Log.d("bongtest", "index " + nIndex);
+			if(nIndex >= 0) {
+				PlayMathActivity.mWorkoutLevel = nIndex;
+				Intent intent = new Intent(WorkoutLevelActivity.this, PlayMathActivity.class);
+				intent.putExtra("gm_menu", 0);
+				intent.putExtra("workout_level", 0);
+				startActivity(intent);
+			}
 		}
 	};
 
