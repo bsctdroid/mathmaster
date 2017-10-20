@@ -9,6 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -190,9 +194,44 @@ public class RankSettingActivity extends BaseActivity {
 	public void parseXml(String strXml)
 	{
 		RankItem rankItem;
-		//aListRankItem.add())
 
-		//XmlPullParser parser =
+		try {
+			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+			XmlPullParser parser = factory.newPullParser();
+			String sTag;
+			parser.setInput(new StringReader(strXml));
+
+			int eventType = parser.getEventType();
+			while(eventType != XmlPullParser.END_DOCUMENT) {
+				switch (eventType) {
+					case XmlPullParser.START_DOCUMENT:            // 문서의 시작
+						Log.d(TAG, "xmlparser START_DOCUMENT");
+						break;
+
+					case XmlPullParser.START_TAG:                 // 태그의 시작
+						Log.d(TAG, "xmlparser START_TAG");
+						String startTag = parser.getName();
+						Log.d(TAG, "xmlparser START_TAG " + startTag);
+						break;
+
+					case XmlPullParser.END_TAG:                    //태그의 끝
+						Log.d(TAG, "xmlparser END_TAG");
+//						String endTag = parser.getName();
+//						if(endTag.equals("student")) {
+//							arrayList.add(student);`
+//						}
+						break;
+					case XmlPullParser.END_DOCUMENT:        // 문서의 끝
+						Log.d(TAG, "xmlparser END_DOCUMENT");
+						break;
+				}
+				eventType = parser.next();
+			}
+
+		} catch(Exception ex) {
+
+		}
+
 	}
 
 	public void onDrawList()
