@@ -194,6 +194,7 @@ public class RankSettingActivity extends BaseActivity {
 	public void parseXml(String strXml)
 	{
 		RankItem rankItem;
+		aListRankItem = new ArrayList<RankItem>();
 
 		try {
 			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -211,15 +212,29 @@ public class RankSettingActivity extends BaseActivity {
 					case XmlPullParser.START_TAG:                 // 태그의 시작
 						Log.d(TAG, "xmlparser START_TAG");
 						String startTag = parser.getName();
-						Log.d(TAG, "xmlparser START_TAG " + startTag);
+						if(startTag.equals("item")) {
+							Log.d(TAG, "xmlparser 1 START_TAG " + startTag);
+							String strName = parser.getAttributeValue(null, "ranking");
+							String strLocal = parser.getAttributeValue(null, "local");
+							String strScore = parser.getAttributeValue(null, "score");
+							String strDate = parser.getAttributeValue(null, "date");
+							String strTime = parser.getAttributeValue(null, "time");
+							Log.d(TAG, "xmlparser 2 START_TAG strName " + strName);
+							Log.d(TAG, "xmlparser 2 START_TAG strLocal " + strLocal);
+							Log.d(TAG, "xmlparser 2 START_TAG strScore " + strScore);
+							Log.d(TAG, "xmlparser 2 START_TAG strDate " + strDate);
+							Log.d(TAG, "xmlparser 2 START_TAG strTime " + strTime);
+						}
+
 						break;
 
 					case XmlPullParser.END_TAG:                    //태그의 끝
 						Log.d(TAG, "xmlparser END_TAG");
-//						String endTag = parser.getName();
-//						if(endTag.equals("student")) {
-//							arrayList.add(student);`
-//						}
+						String endTag = parser.getName();
+						if(endTag.equals("item")) {
+							//arrayList.add(student);`
+							Log.d(TAG, "xmlparser 2 END_TAG " + endTag);
+						}
 						break;
 					case XmlPullParser.END_DOCUMENT:        // 문서의 끝
 						Log.d(TAG, "xmlparser END_DOCUMENT");
