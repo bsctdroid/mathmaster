@@ -193,8 +193,9 @@ public class RankSettingActivity extends BaseActivity {
 
 	public void parseXml(String strXml)
 	{
-		RankItem rankItem;
-		aListRankItem = new ArrayList<RankItem>();
+		//aListRankItem = new ArrayList<RankItem>();
+		if(aListRankItem != null)
+			aListRankItem.clear();
 
 		try {
 			XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
@@ -214,16 +215,19 @@ public class RankSettingActivity extends BaseActivity {
 						String startTag = parser.getName();
 						if(startTag.equals("item")) {
 							Log.d(TAG, "xmlparser 1 START_TAG " + startTag);
-							String strName = parser.getAttributeValue(null, "ranking");
+							String strRank = parser.getAttributeValue(null, "ranking");
 							String strLocal = parser.getAttributeValue(null, "local");
 							String strScore = parser.getAttributeValue(null, "score");
 							String strDate = parser.getAttributeValue(null, "date");
 							String strTime = parser.getAttributeValue(null, "time");
-							Log.d(TAG, "xmlparser 2 START_TAG strName " + strName);
+							Log.d(TAG, "xmlparser 2 START_TAG strRank " + strRank);
 							Log.d(TAG, "xmlparser 2 START_TAG strLocal " + strLocal);
 							Log.d(TAG, "xmlparser 2 START_TAG strScore " + strScore);
 							Log.d(TAG, "xmlparser 2 START_TAG strDate " + strDate);
 							Log.d(TAG, "xmlparser 2 START_TAG strTime " + strTime);
+
+							RankItem rankItem = new RankItem(strRank, "aa", strLocal, strScore, strDate+strTime);
+							aListRankItem.add(rankItem);
 						}
 
 						break;
@@ -254,14 +258,14 @@ public class RankSettingActivity extends BaseActivity {
 		ViewGroup group = ViewGroup.class.cast(findViewById(android.R.id.list));
 		LayoutInflater layoutInflater = getLayoutInflater();
 
-		for (int i = 0; i < 30; i++) {
+		for (int i = 0; i < aListRankItem.size(); i++) {
 			View listItem = layoutInflater.inflate(R.layout.view_rank_listitem, group, false);//(R.layout.template_listitem_info, group, false);
-			TextView.class.cast(listItem.findViewById(R.id.tvRank)).setText("" + i);
+			TextView.class.cast(listItem.findViewById(R.id.tvRank)).setText(aListRankItem.get(i).getStrRank());
 			TextView.class.cast(listItem.findViewById(R.id.textViewBtnHidden)).setText(""+i);
 
-			TextView.class.cast(listItem.findViewById(R.id.tvId)).setText("test" + i);
-			TextView.class.cast(listItem.findViewById(R.id.tvCountry)).setText("KOREA");
-			TextView.class.cast(listItem.findViewById(R.id.tvScore)).setText("10" + i);
+			TextView.class.cast(listItem.findViewById(R.id.tvId)).setText(aListRankItem.get(i).getStrId());
+			TextView.class.cast(listItem.findViewById(R.id.tvCountry)).setText(aListRankItem.get(i).getStrCountry());
+			TextView.class.cast(listItem.findViewById(R.id.tvScore)).setText(aListRankItem.get(i).getStrScore());
 
 
 			listItem.setClickable(true);

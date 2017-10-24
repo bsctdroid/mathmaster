@@ -13,6 +13,7 @@ public class Constants {
 	
 	//http://blackzombie.zc.bz/math_master/reg_math_score.php?id=aaa&local=1&score=27
 	public static final String URL_RANK_SCORE					= "http://blackzombie.zc.bz/math_master/reg_math_score.php";
+	public static final String URL_RANK_ID					= "http://blackzombie.zc.bz/math_master/reg_math_id.php";
 	
 	public static final int WORK_MODE_PLUS		= 1;
 	public static final int WORK_MODE_MINUS		= 2;
