@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
@@ -44,8 +45,12 @@ public class RegisterUserInfoActivity extends Activity {
         {
             case R.id.btn_confirm:
                 //finish();
+                if(etId.getText().toString() != null && etId.getText().toString().length() > 0)
+                {
 
-                new AsyncTaskURegId().execute();
+                    new AsyncTaskURegId().execute();
+                }
+
                 break;
         }
     }
@@ -60,6 +65,8 @@ public class RegisterUserInfoActivity extends Activity {
         protected Boolean doInBackground(String... params) {
             boolean result = true;
             try {
+               // String = strId = params[0];
+
                 String url = Constants.URL_RANK_ID;
 
                 HashMap<String, String> hashParams = new HashMap<String, String>();
@@ -111,13 +118,21 @@ public class RegisterUserInfoActivity extends Activity {
         @Override
         protected void onPostExecute(Boolean result) {
             super.onPostExecute(result);
+            Log.d("BONGTEST", "eMsg " + eMsg);
             parseXml(eMsg);
         }
     }
 
     public void parseXml(String strXml)
     {
-
+        if(strXml.contains("success")) {
+            Toast.makeText(RegisterUserInfoActivity.this, "success", Toast.LENGTH_SHORT).show();
+        }
+        else if(strXml.contains("fail")){
+            Toast.makeText(RegisterUserInfoActivity.this, "fail", Toast.LENGTH_SHORT).show();
+        }
+        else
+            Toast.makeText(RegisterUserInfoActivity.this, "network error", Toast.LENGTH_SHORT).show();
     }
 
 
