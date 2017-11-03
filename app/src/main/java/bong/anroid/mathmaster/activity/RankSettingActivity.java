@@ -139,7 +139,7 @@ public class RankSettingActivity extends BaseActivity {
 
 				HashMap<String, String> hashParams = new HashMap<String, String>();
 
-				String enCodingId = "테스트3";
+				String enCodingId = "setting";
 
 				try {
 					//enCodingUrl = URLEncoder.encode(CDefine.id, "UTF-8");//test

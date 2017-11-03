@@ -9,6 +9,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.navercorp.volleyextensions.volleyer.Volleyer;
+import com.navercorp.volleyextensions.volleyer.factory.DefaultRequestQueueFactory;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -16,6 +21,7 @@ import java.util.HashMap;
 import bong.anroid.mathmaster.R;
 import bong.anroid.mathmaster.utils.Constants;
 import bong.anroid.mathmaster.utils.NetBaseAsyncTask;
+import bong.anroid.mathmaster.utils.RankItem;
 
 /**
  * Created by jubong on 2017-08-25.
@@ -37,6 +43,11 @@ public class RegisterUserInfoActivity extends Activity {
         etId = (EditText)findViewById(R.id.et_id);
         etCountry = (EditText)findViewById(R.id.et_country);
         btnConfirm = (Button)findViewById(R.id.btn_confirm);
+
+       // Volleyer.volleyer().get(Constants.URL_RANK_ID);
+        RequestQueue rq = DefaultRequestQueueFactory.create(this);
+        rq.start();
+        Volleyer.volleyer(rq).settings().setAsDefault().done();
     }
 
     public void mOnClick(View view)
@@ -47,14 +58,80 @@ public class RegisterUserInfoActivity extends Activity {
                 //finish();
                 if(etId.getText().toString() != null && etId.getText().toString().length() > 0)
                 {
-
-                    new AsyncTaskURegId().execute();
+                    //new AsyncTaskURegId().execute();
+                    requestRegidVolley();
                 }
 
                 break;
         }
     }
 
+
+
+
+
+
+    private void requestRegidVolley()
+    {
+        String url = Constants.URL_RANK_ID;
+
+        String requestUrl = "";
+        String enCodingId = "vo4테스트";//etId.getText().toString();
+        String local = "3";
+
+        try {
+            //enCodingUrl = URLEncoder.encode(CDefine.id, "UTF-8");//test
+            enCodingId = URLEncoder.encode(enCodingId, "EUC-KR");	//test
+            //enCodingId = new String(enCodingId.getBytes("EUC-KR"));
+//
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+
+        requestUrl = url + "?id=" + enCodingId + "&local=" + local;
+
+
+
+        Log.d("BONGTEST", " url " + requestUrl);
+        try{
+            Volleyer.volleyer().get(requestUrl)
+                    .addHeader("Content-type", "application/json; charset=euc-kr")
+                    //.withTargetClass(String)
+                    .withListener(listener2)
+                    .execute();
+        }catch(Exception e)
+        {
+            Log.d("BONGTEST", " " + e);
+        }
+
+
+    }
+
+    private Response.Listener<String> listener2 = new Response.Listener<String>()
+    {
+        @Override
+        public void onResponse(String item)
+        {
+            Log.d("BONGTEST", "item " + item );
+//            textResult.setText("==== jackson1 ====\n");
+//            textResult.append(item.name + ", " + item.url);
+        }
+    };
+
+    private Response.Listener<RankItem> listener1 = new Response.Listener<RankItem>()
+    {
+        @Override
+        public void onResponse(RankItem item)
+        {
+
+//            textResult.setText("==== jackson1 ====\n");
+//            textResult.append(item.name + ", " + item.url);
+        }
+    };
+
+    /////////////////////////////////////////////////////////////////////////////////
+    //                          일반 요청 함수                                     //
+    /////////////////////////////////////////////////////////////////////////////////
     private class AsyncTaskURegId extends NetBaseAsyncTask {
         private String eMsg = "";
 
