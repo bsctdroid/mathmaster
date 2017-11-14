@@ -47,10 +47,10 @@ public class RankSettingActivity extends BaseActivity {
 		tvId = (TextView)findViewById(R.id.tv_id);
 		tvLocal = (TextView)findViewById(R.id.tv_local);
 
-		if(mDataMgrApp.userId.length() > 0)
-			tvId.setText(mDataMgrApp.userId);
-		if(mDataMgrApp.userLocal.length() > 0)
-			tvLocal.setText(mDataMgrApp.userLocal);
+			if(mDataMgrApp.userId.length() > 0)
+			tvId.setText("ID : " + mDataMgrApp.userId);
+		if(mDataMgrApp.userLocal > 0)
+			tvLocal.setText("Country : " + mDataMgrApp.userLocal);
 
 
 	}
@@ -118,14 +118,14 @@ public class RankSettingActivity extends BaseActivity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 
-		new AsyncTaskUserArea().execute();
+		new AsyncTaskRegScore().execute();
 		super.onStart();
 	}
 
 
 
 
-	private class AsyncTaskUserArea extends NetBaseAsyncTask{
+	private class AsyncTaskRegScore extends NetBaseAsyncTask{
 		private String eMsg = "";
 
 		String strId = "";
@@ -139,19 +139,22 @@ public class RankSettingActivity extends BaseActivity {
 
 				HashMap<String, String> hashParams = new HashMap<String, String>();
 
-				String enCodingId = "setting";
+				if(mDataMgrApp.userId != null && mDataMgrApp.userId.length() > 0) {
+					String enCodingId = mDataMgrApp.userId;
+					String local = "" + mDataMgrApp.userLocal;
+					String score = "" + mDataMgrApp.maxRankScore;
 
-				try {
-					//enCodingUrl = URLEncoder.encode(CDefine.id, "UTF-8");//test
-					enCodingId = URLEncoder.encode(enCodingId, "EUC-KR");	//test
-//
-				} catch (UnsupportedEncodingException e) {
-					e.printStackTrace();
+					try {
+						//enCodingUrl = URLEncoder.encode(CDefine.id, "UTF-8");//test
+						enCodingId = URLEncoder.encode(enCodingId, "EUC-KR");    //test
+						//
+					} catch (UnsupportedEncodingException e) {
+						e.printStackTrace();
+					}
+					hashParams.put("id", enCodingId);
+					hashParams.put("local", local);
+					hashParams.put("score", score);
 				}
-
-				hashParams.put("id", enCodingId);
-				hashParams.put("local", "1");
-				hashParams.put("score", "16");
 
 				NetReturn data = getHTTPGETData(url,hashParams);
 
@@ -216,17 +219,19 @@ public class RankSettingActivity extends BaseActivity {
 						if(startTag.equals("item")) {
 							Log.d(TAG, "xmlparser 1 START_TAG " + startTag);
 							String strRank = parser.getAttributeValue(null, "ranking");
+							String strId = parser.getAttributeValue(null, "id");
 							String strLocal = parser.getAttributeValue(null, "local");
 							String strScore = parser.getAttributeValue(null, "score");
 							String strDate = parser.getAttributeValue(null, "date");
 							String strTime = parser.getAttributeValue(null, "time");
 							Log.d(TAG, "xmlparser 2 START_TAG strRank " + strRank);
+							Log.d(TAG, "xmlparser 2 START_TAG strId " + strId);
 							Log.d(TAG, "xmlparser 2 START_TAG strLocal " + strLocal);
 							Log.d(TAG, "xmlparser 2 START_TAG strScore " + strScore);
 							Log.d(TAG, "xmlparser 2 START_TAG strDate " + strDate);
 							Log.d(TAG, "xmlparser 2 START_TAG strTime " + strTime);
 
-							RankItem rankItem = new RankItem(strRank, "aa", strLocal, strScore, strDate+strTime);
+							RankItem rankItem = new RankItem(strRank, strId, strLocal, strScore, strDate+strTime);
 							aListRankItem.add(rankItem);
 						}
 
@@ -257,6 +262,8 @@ public class RankSettingActivity extends BaseActivity {
 	{
 		ViewGroup group = ViewGroup.class.cast(findViewById(android.R.id.list));
 		LayoutInflater layoutInflater = getLayoutInflater();
+		group.removeAllViews();
+
 
 		for (int i = 0; i < aListRankItem.size(); i++) {
 			View listItem = layoutInflater.inflate(R.layout.view_rank_listitem, group, false);//(R.layout.template_listitem_info, group, false);

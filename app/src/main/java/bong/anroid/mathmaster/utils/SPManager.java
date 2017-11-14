@@ -51,14 +51,14 @@ public class SPManager {
 	 * 사용자의 위치 정보
 	 * @return
 	 */
-	public static String getUserLocal(){
-		String userLocal = SPManager.getInstance().getString(Constants.PREF_KEY_USER_LOCAL, "");
+	public static int getUserLocal(){
+		int userLocal = SPManager.getInstance().getInt(Constants.PREF_KEY_USER_LOCAL, 0);
 		return userLocal;
 	}
 	
-	public static void setUserLocal(String userLocal){
+	public static void setUserLocal(int userLocal){
 		Editor spreEdit = SPManager.getInstance().edit();
-		spreEdit.putString(Constants.PREF_KEY_USER_LOCAL, userLocal);
+		spreEdit.putInt(Constants.PREF_KEY_USER_LOCAL, userLocal);
 		spreEdit.commit();		
 	}
 	

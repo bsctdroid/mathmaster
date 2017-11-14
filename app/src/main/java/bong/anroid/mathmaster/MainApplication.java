@@ -8,7 +8,7 @@ public class MainApplication  extends Application {
 	
 
 	public String userId = "";
-	public String userLocal = "";
+	public int userLocal = 0;
 
 	public int[] arWorkoutLevel = new int[5];
 	public int maxRankScore = 0;

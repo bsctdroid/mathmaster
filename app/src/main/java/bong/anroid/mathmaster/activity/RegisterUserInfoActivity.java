@@ -1,6 +1,5 @@
 package bong.anroid.mathmaster.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -18,21 +17,26 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.HashMap;
 
+import bong.anroid.mathmaster.BaseActivity;
 import bong.anroid.mathmaster.R;
 import bong.anroid.mathmaster.utils.Constants;
 import bong.anroid.mathmaster.utils.NetBaseAsyncTask;
 import bong.anroid.mathmaster.utils.RankItem;
+import bong.anroid.mathmaster.utils.SPManager;
 
 /**
  * Created by jubong on 2017-08-25.
  */
 
-public class RegisterUserInfoActivity extends Activity {
+public class RegisterUserInfoActivity extends BaseActivity {
     public static String TAG = RegisterUserInfoActivity.class.getName();
 
     EditText etId = null;
     EditText etCountry = null;
     Button btnConfirm = null;
+
+    String mStrUserId = "";
+    int mnUserLoacl = 0;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +47,8 @@ public class RegisterUserInfoActivity extends Activity {
         etId = (EditText)findViewById(R.id.et_id);
         etCountry = (EditText)findViewById(R.id.et_country);
         btnConfirm = (Button)findViewById(R.id.btn_confirm);
+
+        SPManager.init(RegisterUserInfoActivity.this);
 
        // Volleyer.volleyer().get(Constants.URL_RANK_ID);
         RequestQueue rq = DefaultRequestQueueFactory.create(this);
@@ -55,11 +61,16 @@ public class RegisterUserInfoActivity extends Activity {
         switch (view.getId())
         {
             case R.id.btn_confirm:
+                mStrUserId = "";
+                mnUserLoacl = 0;
                 //finish();
                 if(etId.getText().toString() != null && etId.getText().toString().length() > 0)
                 {
-                    //new AsyncTaskURegId().execute();
-                    requestRegidVolley();
+                    mStrUserId = etId.getText().toString();
+                    mnUserLoacl = 0;
+
+                    new AsyncTaskURegId().execute();
+                    //requestRegidVolley();
                 }
 
                 break;
@@ -76,7 +87,7 @@ public class RegisterUserInfoActivity extends Activity {
         String url = Constants.URL_RANK_ID;
 
         String requestUrl = "";
-        String enCodingId = "vo4테스트";//etId.getText().toString();
+        String enCodingId = etId.getText().toString();
         String local = "3";
 
         try {
@@ -148,8 +159,8 @@ public class RegisterUserInfoActivity extends Activity {
 
                 HashMap<String, String> hashParams = new HashMap<String, String>();
 
-                String enCodingId = "registest1";
-                String local = "3";
+                String enCodingId = mStrUserId;
+                String local = String.valueOf(mnUserLoacl);
 
                 try {
                     //enCodingUrl = URLEncoder.encode(CDefine.id, "UTF-8");//test
@@ -204,6 +215,13 @@ public class RegisterUserInfoActivity extends Activity {
     {
         if(strXml.contains("success")) {
             Toast.makeText(RegisterUserInfoActivity.this, "success", Toast.LENGTH_SHORT).show();
+
+            mDataMgrApp.userId = mStrUserId;
+            mDataMgrApp.userLocal = mnUserLoacl;
+
+            SPManager.setUserId(mDataMgrApp.userId);
+            SPManager.setUserLocal(mDataMgrApp.userLocal);
+
         }
         else if(strXml.contains("fail")){
             Toast.makeText(RegisterUserInfoActivity.this, "fail", Toast.LENGTH_SHORT).show();
@@ -211,6 +229,7 @@ public class RegisterUserInfoActivity extends Activity {
         else
             Toast.makeText(RegisterUserInfoActivity.this, "network error", Toast.LENGTH_SHORT).show();
     }
+
 
 
 }

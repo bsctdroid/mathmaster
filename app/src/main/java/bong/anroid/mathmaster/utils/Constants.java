@@ -12,7 +12,7 @@ public class Constants {
 	public static final String PREF_KEY_RANK_SCORE				= "pref_key_rank_score";
 	
 	//http://blackzombie.zc.bz/math_master/reg_math_score.php?id=aaa&local=1&score=27
-	public static final String URL_RANK_SCORE					= "http://blackzombie.zc.bz/math_master/reg_math_score.php";
+	public static final String URL_RANK_SCORE				= "http://blackzombie.zc.bz/math_master/reg_math_score.php";
 	public static final String URL_RANK_ID					= "http://blackzombie.zc.bz/math_master/reg_math_id.php";
 	
 	public static final int WORK_MODE_PLUS		= 1;
